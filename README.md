@@ -9,10 +9,6 @@ Joern) do. An optional **LLM-based post-filter** classifies each finding's
 exploitability to cut false positives, mirroring recent research that reduced
 SAST false-positive rates from >92% to ~6.3%.
 
-> Built as a portfolio piece for **0-day hunting**: point TaintScope at
-> real open-source PHP apps (WordPress plugins, Laravel packages, Symfony
-> bundles) and responsibly disclose what it finds.
-
 ---
 
 ## How it works
