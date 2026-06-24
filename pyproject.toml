@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "taintscope"
+version = "0.1.0"
+description = "A PHP/Python taint analysis engine for source-to-sink vulnerability detection with LLM-based false-positive filtering."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "mhammed-talhaouy" }]
+keywords = ["taint-analysis", "sast", "php", "python", "security", "static-analysis"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+    "networkx>=3.0",
+    "fastapi>=0.100",
+    "uvicorn[standard]>=0.20",
+    "sqlalchemy>=2.0",
+    "psycopg2-binary>=2.9",
+    "openai>=1.0",
+    "pydantic>=2.0",
+    "rich>=13.0",
+    "click>=8.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov", "httpx>=0.24"]
+
+[project.scripts]
+taintscope = "taintscope.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["taintscope*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

@@ -1,0 +1,11 @@
+{
+    "name": "taintscope/php-ast-dumper",
+    "description": "Thin PHP helper that uses nikic/PHP-Parser to dump ASTs as JSON for the TaintScope Python engine.",
+    "license": "MIT",
+    "require": {
+        "nikic/php-parser": "^4.0"
+    },
+    "autoload": {
+        "psr-4": { "TaintScope\\PhpAst\\": "src/" }
+    }
+}
